@@ -1,0 +1,67 @@
+name: Bug report
+description: Something behaves differently from what it should
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Not for security issues.** Those go through private reporting — see
+        the Security tab, or info@lilydelivery.com.
+
+        **Not for a customer's order problem.** Support handles those; see
+        SUPPORT.md.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: One or two sentences. What did you see?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen instead
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: How to reproduce it
+      description: >
+        The smallest sequence that shows it. For an API issue, the request and
+        the response. For an app issue, the screen and what you tapped.
+      placeholder: |
+        1. …
+        2. …
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit / app build
+      description: >
+        App build number, or the commit the server is running. "Latest" is not a
+        version — a deploy that did not land is a thing that happens here.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Does it touch money, authentication, or customer data?
+      description: These are triaged first.
+      options:
+        - "No"
+        - "Money — payments, wallet, ledger, payouts, pricing"
+        - "Authentication or access"
+        - "Customer data"
+        - "Not sure"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or evidence
+      description: >
+        Paste what you have — log lines, an order id, a timestamp with its
+        timezone. **Redact tokens, keys and full phone numbers.**

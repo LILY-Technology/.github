@@ -1,0 +1,37 @@
+name: Feature or change request
+description: Something should exist, or work differently
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve
+      description: >
+        Describe the situation, not the solution. Who is blocked today, and on
+        what? A request that only describes the feature cannot be judged against
+        anything.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you propose
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent
+      options:
+        - "Nice to have"
+        - "Needed soon — there is a workaround"
+        - "Blocking — there is no workaround"
+    validations:
+      required: true
+  - type: textarea
+    id: money
+    attributes:
+      label: Does it change money, pricing, or what a party is owed?
+      description: >
+        If yes, say which figure moves and who sees it. Commission, delivery
+        fee, wallet, payouts, the ledger.
